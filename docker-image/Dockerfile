@@ -76,7 +76,7 @@ RUN ln -sf /var/lib/rabbitmq/.erlang.cookie /root/
 RUN ln -sf /usr/lib/rabbitmq/lib/rabbitmq_server-$RABBITMQ_VERSION/plugins /plugins
 
 RUN apt-get update && apt-get install -y python python-pip python-dev build-essential vim \
-	&& pip install pika
+	&& pip install pika boto3
 
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN ln -s usr/local/bin/docker-entrypoint.sh / # backwards compat

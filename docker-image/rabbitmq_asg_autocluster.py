@@ -16,13 +16,8 @@ Requirements:
 
 from subprocess import Popen, PIPE
 from time import sleep
-import re
-try:
-    import boto3
-except ImportError:
-    import pip
-    pip.main(['install', 'boto3'])
-    import boto3
+import re, boto3
+
 
 # initialize boto client and ec2 resource
 client_asg = boto3.client('autoscaling', region_name='us-east-1')
